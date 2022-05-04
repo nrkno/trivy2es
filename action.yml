@@ -5,7 +5,7 @@ inputs:
   elasticApiAddress:
     description: 'The URL of the ElasticSearch API we are sending data to'
     required: true
-  index:
+  targetIndex:
     description: 'The index we should send data to'
     required: true
     default: 'ghactions'
@@ -26,6 +26,6 @@ runs:
   image: 'Dockerfile'
   args:
     - ${{ inputs.elasticApiAddress }}
-    - ${{ inputs.index }}
-    - ${{ inputs.githbRepository }}
+    - ${{ inputs.targetIndex }}
+    - ${{ inputs.githubRepository }}
     - ${{ inputs.jsonInput }}
