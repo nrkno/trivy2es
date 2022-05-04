@@ -1,0 +1,31 @@
+# action.yml
+name: 'Send json output of Trivy action to Elasticsearch'
+description: 'Get the json output from a standard Trivy action and send it to an Elasticseach index'
+inputs:
+  elasticApiAddress:
+    description: 'The URL of the ElasticSearch API we are sending data to'
+    required: true
+  index:
+    description: 'The index we should send data to'
+    required: true
+    default: 'ghactions'
+  githubRepository:
+    description: 'The Github repository name we have scanned. Include organization name, for example "nrkno/pippo"'
+    required: true
+    default: 'nrkno/pippo'
+  jsonInput:
+    description: 'The json formatted file we obtained from running the Trivy aquasecurity/trivy-action Github Action with format: json as an output'
+    required: true
+
+
+outputs:
+  time: # id of output
+    description: 'The time we greeted you'
+runs:
+  using: 'docker'
+  image: 'Dockerfile'
+  args:
+    - ${{ inputs.elasticApiAddress }}
+    - ${{ inputs.index }}
+    - ${{ inputs.githbRepository }}
+    - ${{ inputs.jsonInput }}
