@@ -3,10 +3,8 @@ import os
 import requests
 import datetime
 
-# api_base_url = "4f560bf84bb74152a34d2072819b16ce.westeurope.azure.elastic-cloud.com"
 api_base_url = os.environ.get('INPUT_ELASTICAPIADDRESS')
 port = "9243"
-# target_index = "ghactions"
 target_index = os.environ.get('INPUT_TARGETINDEX')
 api_key = os.environ.get('ELASTIC_API_KEY')
 repo_name = os.environ.get('INPUT_GITHUBREPOSITORY')
