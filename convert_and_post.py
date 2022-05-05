@@ -15,10 +15,10 @@ headers = { 'Authorization': f'ApiKey {api_key}', 'Content-Type': f'application/
 target_url = "https://" + api_base_url + ":" + port + "/" + target_index + "/" + "doc"
 json_input = os.environ.get('INPUT_JSONINPUT')
 
-# with open("test.json", "r") as json_file:
-#    test = json.load(json_file)
+with open("json_input", "r") as json_file:
+    test = json.load(json_file)
 
-test = json.load(json_input)
+# test = json.load(json_input)
 timestamp = datetime.datetime.now().isoformat()
 metadata = test["Metadata"]
 for result in test["Results"]:
