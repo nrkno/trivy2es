@@ -13,7 +13,7 @@ headers = { 'Authorization': f'ApiKey {api_key}', 'Content-Type': f'application/
 target_url = "https://" + api_base_url + ":" + port + "/" + target_index + "/" + "doc"
 json_input = os.environ.get('INPUT_JSONINPUT')
 
-with open("json_input", "r") as json_file:
+with open(json_input, "r") as json_file:
     test = json.load(json_file)
 
 # test = json.load(json_input)
