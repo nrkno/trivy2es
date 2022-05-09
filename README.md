@@ -1,6 +1,6 @@
 ## Github action to post output from trivy scan to Elastic Search
 
-NB: This is to be considered WIP for now, however check LICENSE.txt 
+NB: This is to be considered WIP for now, however check LICENSE 
 
 This Github Action is meant to be used to send the json output of a [Trivy scan Github Action](https://github.com/aquasecurity/trivy-action)
 to an Elasticsearch cloud instance.
