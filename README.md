@@ -26,7 +26,7 @@ For example:
           TRIVY_PASSWORD: ${{ secrets.PLATTFORM_ACR_PUSH_CLIENT_SECRET }}
       # Use our internal made action for posting to ES
       - name: Send to ES
-        uses: nrkno/trivy2es@v1.3
+        uses: nrkno/trivy2es@master
         with:
           elasticApiAddress: 'XXXXXXXXXXXXXXXXX.westeurope.azure.elastic-cloud.com'
           targetIndex: 'github-actions'
