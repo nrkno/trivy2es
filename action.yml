@@ -5,6 +5,9 @@ inputs:
   elasticApiAddress:
     description: 'The URL of the ElasticSearch API we are sending data to'
     required: true
+  elasticPort:
+    description: 'The PORT of ElasticSearch API we are sending data to, default is 9243'
+    required: false
   targetIndex:
     description: 'The index we should send data to'
     required: true

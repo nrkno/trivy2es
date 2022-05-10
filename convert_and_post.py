@@ -4,7 +4,7 @@ import requests
 import datetime
 
 api_base_url = os.environ.get('INPUT_ELASTICAPIADDRESS')
-port = os.environ.get('INPUT_ELASTICPORT')
+port = os.environ.get('INPUT_ELASTICPORT') if os.environ.get('INPUT_ELASTICPORT') else 9243
 target_index = os.environ.get('INPUT_TARGETINDEX')
 api_key = os.environ.get('ELASTIC_API_KEY')
 repo_name = os.environ.get('INPUT_GITHUBREPOSITORY')
