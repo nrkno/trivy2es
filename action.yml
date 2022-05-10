@@ -8,6 +8,7 @@ inputs:
   elasticPort:
     description: 'The PORT of ElasticSearch API we are sending data to, default is 9243'
     required: false
+    default: '9243'
   targetIndex:
     description: 'The index we should send data to'
     required: true
@@ -29,6 +30,7 @@ runs:
   image: 'Dockerfile'
   args:
     - ${{ inputs.elasticApiAddress }}
+    - ${{ inputs.elasticPort }}
     - ${{ inputs.targetIndex }}
     - ${{ inputs.githubRepository }}
     - ${{ inputs.jsonInput }}
